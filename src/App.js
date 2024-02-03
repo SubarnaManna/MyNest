@@ -1,177 +1,150 @@
-import Header from "./components/header.jsx";
+/**
+ * React imports 
+ * BrowserRouter as Router for : Routing the Components.
+ * Routes : helps in Components Switching.
+ * Route : maps the application paths and the Components.
+ * 
+*/
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/home.jsx";
-import Contacts from "./components/contact.jsx";
-import About from "./components/about.jsx";
-import Login_as_owner from "./components/login_as_owner.jsx";
-// import Pgowner from "./components/pgowner.jsx";
-import Signup_as_owner from "./components/signup_as_owner.jsx";
-import Form from "./components/form.jsx";
-import Profile from "./components/profile.jsx";
-import Pgfullview from "./components/pgfullview.jsx";
 import React, { useState, Component } from "react";
-import { Link } from "react-router-dom";
-import ErrorPage from "./components/error.jsx";
+
+
+
+
+
+/**
+ * ******** Application Components import Starts ********
+ */
+import Header from "./components/Common/header.jsx";
+import Home from "./components/Home/home.jsx";
+import Contacts from "./components/Contact/Contact.jsx";
+import About from "./components/About/About.jsx";
+import Login_as_owner from "./components/PG-Owner/Login_As_Owner.jsx";
+// import Pgowner from "./components/pgowner.jsx";
+import Signup_as_owner from "./components/PG-Owner/Signup_As_Owner.jsx";
+import Form from "./components/PG-Owner/Form.jsx";
+import Profile from "./components/PG-Owner/Profile.jsx";
+import Pgfullview from "./components/PG/PG-Full-view.jsx";
+import ErrorPage from "./components/Error-Page/error.jsx";
+/**
+ * ******** Application Components import Ends ********
+ */
+
+
+
+
+/** ******** Importing Context API (Starts Here) ******** */
+import PGOwnerState from "./Contexts/API/PGOwnerAPI.mjs";
+/** ******** Importing Context API (Ends Here) ******** */
+
+
+/**
+ * ******** Handeling uncertain Application Error ********
+ */
 class ErrorBoundary extends Component {
+  // Setting  Default constructor to error false State  
   constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
 
+  // if founds an error returns true 
   static getDerivedStateFromError(error) {
     return { hasError: true };
   }
 
+  // runs when unable to catch the error 
   componentDidCatch(error, errorInfo) {
     // Log the error to an error reporting service or console
     console.error("Error caught by error boundary:", error, errorInfo);
   }
 
+  // rendering to Error Page if founds an error 
   render() {
     if (this.state.hasError) {
       // Display a user-friendly message or a fallback UI
       return <div><ErrorPage/></div>;
     }
 
+    // Finally returning the children based on Error States
     return this.props.children;
   }
 }
 
+/**
+ * Main App Component
+ * 
+ * Control : Routing the Components 
+ * Context : Provides all Application Contexts to All of the Components 
+ * 
+ */
 const App = () => {
-  const [formData, setformData] = useState(null);
-  const [pgData, setpgData] = useState(null);
-  const [address, setaddress] = useState(null);
-  const [newuserId, setnewuserId] = useState(null);
-  const [profileName, setprofileName] = useState(null);
-  const [profileEmail, setprofileEmail] = useState(null);
+/**
+ * Application Route Map :               
+ *  |_________"/"  
+ *  |_________"/home"
+ *  |_________"/about"
+ *  |_________"/contact" 
+ *  |_________"/profile"
+ *  |_________"/pgowner"
+ *  |_________"/signup"
+ *  |_________"/form"
+ *  |_________"/editform"
+ *  |_________"/login"
+ *  |_________"/fulldetails" 
+ *               
+ */
 
-  let newedit = (obj) => {
-    setformData(obj);
-  };
 
-  let getLogin = (data) => {
-    console.log(data);
-    if (data !== "") {
-      setnewuserId(data);
-    } else {
-      setnewuserId(null);
-    }
-  };
-  let getUser = (data) => {
-    if (data !== "") {
-      setprofileName(data);
-    } else {
-      setprofileName(null);
-    }
-  };
-  let getEmail = (data) => {
-    if (data !== "") {
-      setprofileEmail(data);
-    } else {
-      setprofileEmail(null);
-    }
-  };
-  let funcPgview = (obj) => {
-    setpgData(obj);
-  };
-  let event_to_address = (my_address) => {
-    setaddress(my_address);
-  };
+
   return (
     <>
       <ErrorBoundary>
+      <PGOwnerState>
         <Router>
-          {newuserId === null ? (
-            <Header isLogin={false} />
-          ) : (
-            <Header isLogin={true} />
-          )}
+          <Header/>
           <Routes>
-            <Route
-              path="/"
-              element={<Home event2={funcPgview} newevent={event_to_address} />}
-            />
-            <Route
-              path="/home"
-              element={<Home event2={funcPgview} newevent={event_to_address} />}
-            />
+            <Route path="/" element={<Home />}/>
+            <Route path="/home" element={<Home />}/>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contacts />} />
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  newedit={newedit}
-                  uId={newuserId}
-                  login={getLogin}
-                  user={getUser}
-                  email={getEmail}
-                  Pname={profileName}
-                  Pemail={profileEmail}
-                />
-              }
-            />
-            <Route
-              path="/pgowner"
-              element={
-                <Login_as_owner
-                  brandedit={newedit}
-                  login={getLogin}
-                  user={getUser}
-                  email={getEmail}
-                />
-              }
-            />
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/pgowner" element={<Login_as_owner /> }/>
             <Route path="/signup" element={<Signup_as_owner />} />
-            <Route path="/form" element={<Form uId={newuserId} />} />
-            <Route
-              path="/editform"
-              element={<Form uId={newuserId} Fdata={formData} />}
-            />
-            <Route
-              path="/login"
-              element={
-                <Login_as_owner
-                  login={getLogin}
-                  user={getUser}
-                  email={getEmail}
-                />
-              }
-            />
-            <Route
-              path="/fulldetails"
-              element={<Pgfullview pgObj={pgData} colAddress={address} />}
-            />
-            
+            <Route path="/form" element={<Form />} />
+            <Route path="/editform" element={<Form />}/>
+            <Route path="/login" element={ <Login_as_owner />}/>
+            <Route path="/fulldetails" element={<Pgfullview />}/>
           </Routes>
         </Router>
+        </PGOwnerState>
       </ErrorBoundary>
     </>
   );
 };
 
-Form.defaultProps = {
-  Fdata: {
-    OwnerName: "",
-    OwnerEmail: "",
-    ContactNumber: "",
-    AdhaarNumber: "",
-    OwnerFullAddress: "",
-    OwnerState: "",
-    City: "",
-    Pincode: "",
-    NearestPoliceStation: "",
-    Landmark: "",
-    NoOfRooms: "",
-    NoOfBeds: "",
-    NoOfAccomodation: "",
-    AirConditioner: "",
-    SeparateMeter: "",
-    Refrigeretor: "",
-    WifiAvailable: "",
-    ImageUrl: "",
-    Rent: "",
-  },
-};
+// Form.defaultProps = {
+//   Fdata: {
+//     OwnerName: "",
+//     OwnerEmail: "",
+//     ContactNumber: "",
+//     AdhaarNumber: "",
+//     OwnerFullAddress: "",
+//     OwnerState: "",
+//     City: "",
+//     Pincode: "",
+//     NearestPoliceStation: "",
+//     Landmark: "",
+//     NoOfRooms: "",
+//     NoOfBeds: "",
+//     NoOfAccomodation: "",
+//     AirConditioner: "",
+//     SeparateMeter: "",
+//     Refrigeretor: "",
+//     WifiAvailable: "",
+//     ImageUrl: "",
+//     Rent: "",
+//   },
+// };
 
 export default App;
