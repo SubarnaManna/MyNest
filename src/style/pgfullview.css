@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.pg-img-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  margin-top: 100px;
+}
+.pg-full-img img {
+  width: 550px;
+  height: 400px;
+}
+.pg-full-desc {
+  width: 300px;
+  margin: 10px;
+  margin-left: 35px;
+  margin-top: -80px;
+}
+.pg-full-desc h1 {
+  font-size: 55px;
+}
+.pg-full-desc p {
+  font-size: 25px;
+  margin-top: 10px;
+}
+.pg-full-desc h3 {
+  font-size: 35px;
+  margin-top: 20px;
+}
+.pg-info {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  justify-content: center;
+  width: auto;
+}
+.room-info {
+  margin: 5px; /* Add margin to create spacing between items */
+  padding: 10px;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+.pg-info p {
+  padding: 5px;
+  font-size: 25px;
+}
+.review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.review-form h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.review-form input {
+  margin: 10px;
+  width: 300px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.review-form-input {
+  display: flex;
+}
+.review-form textarea {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: yellow;
+}
+.review-form button {
+  margin: 15px;
+  padding: 5px;
+  height: 40px;
+  width: fit-content;
+  color: #313b2f;
+  padding: 5px 8px;
+
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 600;
+  background-color: #b0b6ba;
+}
+.post-show-btn button{
+  background-color: #00BFFF;
+}
+.post-show-btn button:hover {
+  box-shadow: 2px 2px 8px black;
+}
+
+.feedback-count {
+  font-size: 23px;
+  margin-left: 15px;
+  font-weight: 800;
+}
+.post-show-btn {
+  display: flex;
+ 
+}
+@media only screen and (max-width: 750px) {
+  .pg-img-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pg-full-img img {
+    align-content: center;
+  }
+  .pg-full-desc {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .pg-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .room-info {
+    width: calc(
+      95% - 30px
+    ); /*25% width for each item with some spacing
+
+    margin: 5px; /* Add margin to create spacing between items */
+    padding: 10px;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+}
+@media only screen and (max-width: 657px) {
+  .pg-img-text {
+  }
+  .pg-full-img img {
+  }
+  .pg-full-desc {
+  }
+  .pg-info {
+  }
+  .room-info {
+  }
+  .review-form {
+  }
+  .review-form-input {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .pg-info {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 921px) {
+  .pg-img-text {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  .pg-full-desc {
+    margin-top: 30px;
+    width: auto;
+
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 737px) {
+  .pg-info {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .pg-container {
+    margin: auto;
+  }
+}

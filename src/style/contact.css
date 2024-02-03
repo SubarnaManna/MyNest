@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.id-card-contact {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+.id-card {
+  width: 250px;
+  height: 485px;
+
+  text-align: center;
+  line-height: 15px;
+  margin: 30px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+.id-card img {
+  height: 300px;
+  font-weight: 700;
+  padding: 5px;
+}
+.id-card h2 {
+  font-size: 20px;
+  margin: 10px;
+}
+.id-card p {
+  font-size: 15px;
+  text-align: left;
+  margin: 10px;
+  line-height: 17px;
+
+  word-spacing: 2px;
+}
+.id-card h3 {
+  text-align: left;
+  margin: 10px;
+  font-size: 17px;
+}
+.college {
+  font-size: 16px;
+  font-weight: 500;
+  word-spacing: 5px;
+}
+.linkedin-logo img {
+  margin-top: -18px;
+  height: 60px;
+  width: 60px;
+  margin-left: 2px;
+}

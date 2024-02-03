@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/*.gp{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+.pg-card-show {
+  display: inline-block;
+  background-color: whitesmoke;
+  margin: 60px;
+  border-radius: 15px;
+  height: 450px;
+  width: 320px;
+  padding: 10px;
+}
+.pg-inner-card-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pg-card-img {
+  height: 180px;
+  width: 230px;
+  border-radius: 15px;
+  margin-left: 0px;
+}
+/* .pg-name {
+  margin-top: 15px;
+} */
+.address {
+  margin: 10px 12px 0px 12px;
+  padding: 5px;
+}
+.pg-room-price {
+  font-size: 35px;
+}
+.view-pg-details {
+  height: 40px;
+  width: 128px;
+  color: #313b2f;
+  margin-top: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #b0b6ba;
+}
+@media only screen and (max-width: 872px) {
+  .pg-card-show {
+    display: block;
+    margin: 25px auto;
+  }
+}

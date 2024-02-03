@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@100;200;300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Outfit", sans-serif;
+}
+img {
+  height: 50px;
+  width: 210px;
+  
+  margin-left: 20px;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+nav {
+  text-decoration: none;
+  margin-right: 100px;
+  margin-top: -60px;
+}
+nav a {
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px;
+  font-size: 23px;
+  font-family: "Outfit", sans-serif;
+  color: #313b2f;
+  font-weight: 800;
+}
+.sticky-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+  background-color:whitesmoke;
+}
+
+@media only screen and (max-width: 750px) {
+  .main {
+    display: none;
+  }
+  .guestify-logo {
+    margin-left: 5px;
+  }
+}
+nav a:hover{
+  background-color: #FF6868;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}

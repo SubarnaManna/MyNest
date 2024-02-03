@@ -1,0 +1,26 @@
+#caption {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+}
+.all-caption {
+  font-weight: bolder;
+  text-shadow: 4px 4px 4px white;
+  font-size: 30px;
+  margin-top: 23px;
+}
+.land-lord,
+.address-details,
+.accomodation-details {
+  background-color: #ffe786;
+  padding: 20px 100px;
+  border-radius: 30px;
+}
+.check {
+  padding: 0px 100px;
+}

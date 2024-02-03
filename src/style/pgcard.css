@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.pg-details-all {
+  width: 800px;
+  /* width: clamp(150px, 90%, 550px); */
+  height: auto;
+  background-color: #fff0b8;
+  margin-top: 5px;
+  border-radius: 25px;
+}
+.ownername  {
+  font-weight: bold;
+}
+.city  {
+  font-weight: bold;
+}
+.pgaddress {
+  font-weight: bold;
+}
+.state  {
+  font-weight: bold;
+}
+.roomprice{
+  font-weight: bold;
+}
+.pg-img img {
+  height: 200px;
+  /* height: clamp(30px, 70%, 150px); */
+  width: 200px;
+  /* width: clamp(30px, 40%, 150px); */
+  margin: 20px;
+  background-color: #313b2f;
+  border-radius: 15px;
+  float: left;
+}
+.pg-details {
+  margin-top: 10px;
+  float: left;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.pg-details h4 {
+  margin: 7px;
+  font-size: 20px;
+}
+
+.edit-delete-btn {
+  float: right;
+  margin-right: 10px;
+  margin-top: 30px;
+}
+.edit-delete-btn button {
+  margin: 10px;
+ 
+}
+.edit {
+  height: 35px;
+  width: 58px;
+  color: #313b2f;
+  margin-top: 31px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #00BFFF;
+}
+.delete {
+  height: 35px;
+  width: 60px;
+  color: #313b2f;
+  margin-top: 31px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background-color:#FF0000;
+  color: white;
+}

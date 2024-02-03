@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.sign-as-own {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 120px;
+}
+
+@media only screen and (max-width: 750px) {
+  .sign-as-own {
+    display: flex;
+    flex-direction: column;
+  }
+  .old-here {
+    margin-top: 20px;
+  }
+}
+.sign-form {
+  height: 375px;
+  width: 300px;
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 25px;
+  align-items: center;
+  border:1px solid black;
+  box-shadow: 5px 5px 4px black;
+}
+.sign-pg-owner {
+  color: #5b645d;
+  font-size: 35px;
+  font-weight: bold;
+}
+.sign-form input {
+  margin: 10px;
+  height: 35px;
+  text-align: start;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #5b645d;
+  letter-spacing: 3px;
+  background-color: transparent;
+}
+
+.input-box {
+  margin-top: 25px;
+}
+.name {
+  border-bottom: 1px solid black;
+}
+.sign-form button a {
+  text-decoration: none;
+  color: #313b2f;
+}
+.sign-form button {
+  height: 40px;
+  width: 95px;
+  color: #313b2f;
+  margin-top: 31px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #b0b6ba;
+}
+.old-here {
+  height: 215px;
+  width: 280px;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  border:1px solid black;
+  box-shadow: 5px 5px 4px black;
+}
+.old-here h2 {
+  color: #5b645d;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.old-here p {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #5b645d;
+  font-weight: 300;
+}
+
+.old-here button {
+  margin-top: 15px;
+  color: #5b645d;
+  height: 40px;
+  width: 85px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: dodgerblue;
+}
+.old-here button a {
+  text-decoration: none;
+  color: black;
+  height: 40px;
+  width: 75px;
+  color: #313b2f;
+
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}

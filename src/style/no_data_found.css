@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.noData{
+    text-align: center;
+    font-weight: 800;
+    font-size: 35px;
+    margin-top: 88px;
+    color: #5b645d;
+}
